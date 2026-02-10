@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с современными цифровыми платформами</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Прогресс-бар -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-panel">
+        <div class="nav-logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>DigitalEdu</span>
+        </div>
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+            </span>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Меню слайдов -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <h3>Содержание</h3>
+            <button class="close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-items" id="menuItems"></div>
+    </div>
+
+    <!-- Контейнер слайдов -->
+    <main class="slides-container">
+        
+        <!-- Слайд 1: Титульный -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            <div class="slide-content title-slide">
+                <div class="title-badge">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Открытый урок</span>
+                </div>
+                <h1 class="main-title">
+                    <span class="title-line">Работа с</span>
+                    <span class="title-line highlight">современными</span>
+                    <span class="title-line">цифровыми платформами</span>
+                </h1>
+                <p class="subtitle">Освойте инструменты цифрового мира для эффективной работы и обучения</p>
+                <div class="title-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>45 минут</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>10 тем</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Тест</span>
+                    </div>
+                </div>
+                <button class="start-btn" onclick="nextSlide()">
+                    <span>Начать урок</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Слайд 2: Что такое цифровые платформы -->
+        <section class="slide" data-slide="2">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-4"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">01</span>
+                    <h2>Что такое цифровые платформы?</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Облачные сервисы</h3>
+                        <p>Хранение и обработка данных в интернете без привязки к устройству</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Социальные сети</h3>
+                        <p>Платформы для коммуникации, обмена опытом и нетворкинга</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Образовательные</h3>
+                        <p>Онлайн-курсы, вебинары, интерактивные учебные материалы</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Рабочие инструменты</h3>
+                        <p>Приложения для совместной работы, планирования и управления</p>
+                    </div>
+                </div>
+                <div class="definition-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Цифровая платформа</strong> — это программно-аппаратная среда, предоставляющая пользователям доступ к различным сервисам, инструментам и контенту через интернет.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 3: Популярные платформы -->
+        <section class="slide" data-slide="3">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-5"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">02</span>
+                    <h2>Популярные цифровые платформы</h2>
+                </div>
+                <div class="platforms-showcase">
+                    <div class="platform-card" style="--delay: 0.1s">
+                        <div class="platform-logo" style="--color: #4285F4">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h4>Google Workspace</h4>
+                        <p>Документы, таблицы, презентации в облаке</p>
+                        <div class="platform-tags">
+                            <span class="tag">Облако</span>
+                            <span class="tag">Офис</span>
+                        </div>
+                    </div>
+                    <div class="platform-card" style="--delay: 0.2s">
+                        <div class="platform-logo" style="--color: #6264A7">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h4>Microsoft 365</h4>
+                        <p>Полный пакет офисных приложений</p>
+                        <div class="platform-tags">
+                            <span class="tag">Офис</span>
+                            <span class="tag">Teams</span>
+                        </div>
+                    </div>
+                    <div class="platform-card" style="--delay: 0.3s">
+                        <div class="platform-logo" style="--color: #E01E5A">
+                            <i class="fab fa-slack"></i>
+                        </div>
+                        <h4>Slack</h4>
+                        <p>Корпоративный мессенджер для команд</p>
+                        <div class="platform-tags">
+                            <span class="tag">Чат</span>
+                            <span class="tag">Работа</span>
+                        </div>
+                    </div>
+                    <div class="platform-card" style="--delay: 0.4s">
+                        <div class="platform-logo" style="--color: #00A4EF">
+                            <i class="fab fa-trello"></i>
+                        </div>
+                        <h4>Trello</h4>
+                        <p>Визуальное управление проектами</p>
+                        <div class="platform-tags">
+                            <span class="tag">Kanban</span>
+                            <span class="tag">Планирование</span>
+                        </div>
+                    </div>
+                    <div class="platform-card" style="--delay: 0.5s">
+                        <div class="platform-logo" style="--color: #FF9900">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h4>AWS / Яндекс.Облако</h4>
+                        <p>Облачная инфраструктура и сервисы</p>
+                        <div class="platform-tags">
+                            <span class="tag">Облако</span>
+                            <span class="tag">IT</span>
+                        </div>
+                    </div>
+                    <div class="platform-card" style="--delay: 0.6s">
+                        <div class="platform-logo" style="--color: #1DB954">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Stepik / Coursera</h4>
+                        <p>Онлайн-образование и курсы</p>
+                        <div class="platform-tags">
+                            <span class="tag">Образование</span>
+                            <span class="tag">Курсы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 4: Облачные технологии -->
+        <section class="slide" data-slide="4">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-6"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">03</span>
+                    <h2>Облачные технологии</h2>
+                </div>
+                <div class="cloud-features">
+                    <div class="feature-main">
+                        <div class="cloud-icon-big">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Преимущества облака</h3>
+                        <p>Работайте из любой точки мира с любого устройства</p>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Синхронизация</h4>
+                                <p>Данные автоматически обновляются на всех устройствах</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Безопасность</h4>
+                                <p>Надёжное хранение с резервным копированием</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Совместная работа</h4>
+                                <p>Редактируйте документы вместе в реальном времени</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Экономия</h4>
+                                <p>Нет затрат на собственное оборудование</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cloud-services">
+                    <div class="service-badge">
+                        <i class="fab fa-google-drive"></i>
+                        <span>Google Drive</span>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fab fa-dropbox"></i>
+                        <span>Dropbox</span>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-cloud"></i>
+                        <span>OneDrive</span>
+                    </div>
+                    <div class="service-badge">
+                        <i class="fas fa-hdd"></i>
+                        <span>Яндекс.Диск</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 5: Инструменты совместной работы -->
+        <section class="slide" data-slide="5">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-7"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">04</span>
+                    <h2>Инструменты совместной работы</h2>
+                </div>
+                <div class="collab-container">
+                    <div class="collab-visual">
+                        <div class="team-avatars">
+                            <div class="avatar" style="--color: #FF6B6B;">А</div>
+                            <div class="avatar" style="--color: #4ECDC4;">М</div>
+                            <div class="avatar" style="--color: #45B7D1;">И</div>
+                            <div class="avatar" style="--color: #96CEB4;">+</div>
+                        </div>
+                        <div class="connection-lines">
+                            <div class="line line-1"></div>
+                            <div class="line line-2"></div>
+                            <div class="line line-3"></div>
+                        </div>
+                        <div class="collab-center">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </div>
+                    <div class="collab-tools">
+                        <div class="tool-card">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>Видеоконференции</h4>
+                                <p>Zoom, Google Meet, Microsoft Teams</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h4>Мессенджеры</h4>
+                                <p>Telegram, Slack, Discord</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <i class="fas fa-tasks"></i>
+                            <div>
+                                <h4>Управление задачами</h4>
+                                <p>Trello, Asana, Notion</p>
+                            </div>
+                        </div>
+                        <div class="tool-card">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h4>Системы контроля версий</h4>
+                                <p>Git, GitHub, GitLab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 6: Образовательные платформы -->
+        <section class="slide" data-slide="6">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-8"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">05</span>
+                    <h2>Образовательные платформы</h2>
+                </div>
+                <div class="edu-platforms">
+                    <div class="edu-card featured">
+                        <div class="edu-header">
+                            <i class="fas fa-star"></i>
+                            <span>Популярное</span>
+                        </div>
+                        <h3>Stepik</h3>
+                        <p>Российская платформа с курсами от ведущих университетов</p>
+                        <ul class="edu-features">
+                            <li><i class="fas fa-check"></i> Бесплатные курсы</li>
+                            <li><i class="fas fa-check"></i> Сертификаты</li>
+                            <li><i class="fas fa-check"></i> Интерактивные задания</li>
+                        </ul>
+                    </div>
+                    <div class="edu-card">
+                        <h3>Coursera</h3>
+                        <p>Международная платформа с курсами от топ-университетов</p>
+                        <ul class="edu-features">
+                            <li><i class="fas fa-check"></i> Дипломы</li>
+                            <li><i class="fas fa-check"></i> На английском</li>
+                            <li><i class="fas fa-check"></i> Стажировки</li>
+                        </ul>
+                    </div>
+                    <div class="edu-card">
+                        <h3>YouTube Education</h3>
+                        <p>Бесплатное обучение через видео-уроки</p>
+                        <ul class="edu-features">
+                            <li><i class="fas fa-check"></i> Видео-формат</li>
+                            <li><i class="fas fa-check"></i> Любые темы</li>
+                            <li><i class="fas fa-check"></i> 24/7 доступ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="edu-stats">
+                    <div class="edu-stat">
+                        <span class="stat-number">70+</span>
+                        <span class="stat-label">млн студентов на Coursera</span>
+                    </div>
+                    <div class="edu-stat">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">млн на Stepik</span>
+                    </div>
+                    <div class="edu-stat">
+                        <span class="stat-number">2000+</span>
+                        <span class="stat-label">университетов-партнёров</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 7: Цифровая безопасность -->
+        <section class="slide" data-slide="7">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-9"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">06</span>
+                    <h2>Цифровая безопасность</h2>
+                </div>
+                <div class="security-container">
+                    <div class="security-visual">
+                        <div class="shield-animation">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="shield-ring ring-1"></div>
+                            <div class="shield-ring ring-2"></div>
+                            <div class="shield-ring ring-3"></div>
+                        </div>
+                    </div>
+                    <div class="security-rules">
+                        <div class="rule-card">
+                            <div class="rule-number">1</div>
+                            <div class="rule-content">
+                                <h4>Сложные пароли</h4>
+                                <p>Используйте комбинацию букв, цифр и символов. Минимум 12 символов.</p>
+                            </div>
+                        </div>
+                        <div class="rule-card">
+                            <div class="rule-number">2</div>
+                            <div class="rule-content">
+                                <h4>Двухфакторная аутентификация</h4>
+                                <p>Включите 2FA везде, где это возможно</p>
+                            </div>
+                        </div>
+                        <div class="rule-card">
+                            <div class="rule-number">3</div>
+                            <div class="rule-content">
+                                <h4>Осторожность с ссылками</h4>
+                                <p>Не переходите по подозрительным ссылкам и вложениям</p>
+                            </div>
+                        </div>
+                        <div class="rule-card">
+                            <div class="rule-number">4</div>
+                            <div class="rule-content">
+                                <h4>Резервное копирование</h4>
+                                <p>Регулярно сохраняйте важные данные</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 8: Советы по эффективному использованию -->
+        <section class="slide" data-slide="8">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-10"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">07</span>
+                    <h2>Советы по эффективному использованию</h2>
+                </div>
+                <div class="tips-container">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Определите цель</h4>
+                        <p>Чётко понимайте, зачем вам платформа и какие задачи решаете</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Изучите функции</h4>
+                        <p>Пройдите обучение, посмотрите туториалы, изучите горячие клавиши</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h4>Интегрируйте</h4>
+                        <p>Свяжите разные платформы для автоматизации рабочих процессов</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Настройте уведомления</h4>
+                        <p>Избегайте информационного шума, оставьте только важное</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Используйте мобильные версии</h4>
+                        <p>Работайте на ходу с полноценными мобильными приложениями</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h4>Обновляйтесь</h4>
+                        <p>Следите за новыми функциями и обновлениями платформ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 9: Будущее цифровых платформ -->
+        <section class="slide" data-slide="9">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-11"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">08</span>
+                    <h2>Будущее цифровых платформ</h2>
+                </div>
+                <div class="future-container">
+                    <div class="future-trends">
+                        <div class="trend-card">
+                            <div class="trend-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4>Искусственный интеллект</h4>
+                            <p>AI помогает в работе, обучении, анализе данных и автоматизации</p>
+                            <div class="trend-examples">
+                                <span>ChatGPT</span>
+                                <span>Midjourney</span>
+                                <span>Copilot</span>
+                            </div>
+                        </div>
+                        <div class="trend-card">
+                            <div class="trend-icon">
+                                <i class="fas fa-vr-cardboard"></i>
+                            </div>
+                            <h4>Виртуальная реальность</h4>
+                            <p>VR и AR меняют способ взаимодействия с цифровым контентом</p>
+                            <div class="trend-examples">
+                                <span>Meta Quest</span>
+                                <span>Apple Vision</span>
+                                <span>Hololens</span>
+                            </div>
+                        </div>
+                        <div class="trend-card">
+                            <div class="trend-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4>Метавселенные</h4>
+                            <p>Виртуальные пространства для работы, учёбы и развлечений</p>
+                            <div class="trend-examples">
+                                <span>Horizon</span>
+                                <span>Roblox</span>
+                                <span>Fortnite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="future-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>К 2030 году более 90% всех рабочих процессов будут проходить через цифровые платформы</p>
+                        <span>— Прогноз аналитиков</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайд 10: Тест -->
+        <section class="slide test-slide" data-slide="10">
+            <div class="slide-bg">
+                <div class="gradient-orb orb-12"></div>
+            </div>
+            <div class="slide-content">
+                <div class="content-header">
+                    <span class="section-number">09</span>
+                    <h2>Проверьте свои знания</h2>
+                </div>
+                <div class="quiz-container" id="quizContainer">
+                    <div class="quiz-start" id="quizStart">
+                        <div class="quiz-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Итоговый тест</h3>
+                        <p>10 вопросов на знание материала урока</p>
+                        <button class="quiz-btn" onclick="startQuiz()">
+                            <span>Начать тест</span>
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="quiz-question" id="quizQuestion" style="display: none;">
+                        <div class="question-progress">
+                            <div class="question-bar" id="questionBar"></div>
+                        </div>
+                        <div class="question-counter">
+                            Вопрос <span id="questionNumber">1</span> из <span id="totalQuestions">10</span>
+                        </div>
+                        <h3 class="question-text" id="questionText"></h3>
+                        <div class="answers-grid" id="answersGrid"></div>
+                    </div>
+                    <div class="quiz-result" id="quizResult" style="display: none;">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 class="result-title" id="resultTitle"></h3>
+                        <div class="result-score" id="resultScore"></div>
+                        <p class="result-message" id="resultMessage"></p>
+                        <div class="result-details" id="resultDetails"></div>
+                        <button class="quiz-btn restart-btn" onclick="restartQuiz()">
+                            <i class="fas fa-redo"></i>
+                            <span>Пройти ещё раз</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Клавиатурная навигация -->
+    <div class="keyboard-hint">
+        <span><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> для навигации</span>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
